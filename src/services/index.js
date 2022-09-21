@@ -1,1 +1,1 @@
-export { default } from './pixabayApiService';
+export { default } from './themoviedbApiService';

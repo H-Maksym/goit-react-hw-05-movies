@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Circles } from 'react-loader-spinner';
 
 //* Components
-import fetchImage from 'services';
+import APIMovie from 'services';
 
 import Title from 'components/Title';
 import Box from 'components/Box';
@@ -39,24 +39,28 @@ export default function App() {
 
     async function getImages() {
       setStatus(Status.PENDING);
+      console.log(await APIMovie.getSearchMovieById(991833));
 
       try {
-        const data = await fetchImage(searchValue, page);
+        const data = await APIMovie.getSearchMovieResult(searchValue, page);
 
         if (page === 1) {
-          if (data.totalHits === 0) {
+          if (data.total_results === 0) {
             toast.info(`Nothing was found for your query - "${searchValue}"`);
             setStatus(Status.RESOLVED);
             return;
           }
-          setTotalHits(data.totalHits);
-          toast.success(`${data.totalHits} pictures were found`, toastConfigs);
+          setTotalHits(data.total_results);
+          toast.success(
+            `${data.total_results} pictures were found`,
+            toastConfigs
+          );
         }
 
-        setImages(pS => [...pS, ...data.hits]);
+        setImages(pS => [...pS, ...data.results]);
         setStatus(Status.RESOLVED);
 
-        if (data.hits.length < 12) {
+        if (data.total_results.length < 12) {
           setStatus(Status.LOADED);
           toast.info('Everything is loaded');
         }
