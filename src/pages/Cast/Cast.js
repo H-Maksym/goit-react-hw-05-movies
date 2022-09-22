@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import API from 'services';
-import { StyledListGallery } from './Cast.styled';
+import {
+  StyledListGallery,
+  StyledListItemGallery,
+  StyledImageGallery,
+} from './Cast.styled';
 // import PropTypes from 'prop-types';
 
 import { toastConfigs } from 'config/notifyConfig';
@@ -37,8 +41,8 @@ export default function Cast() {
         <StyledListGallery>
           {cast.map(({ original_name, profile_path, character }, idx) => {
             return (
-              <li key={idx}>
-                <img
+              <StyledListItemGallery key={idx}>
+                <StyledImageGallery
                   width="342px"
                   alt={original_name}
                   src={`https://image.tmdb.org/t/p/w342/${
@@ -50,7 +54,7 @@ export default function Cast() {
                 />
                 <p>{original_name}</p>
                 <p>Character: {character}</p>
-              </li>
+              </StyledListItemGallery>
             );
           })}
         </StyledListGallery>
