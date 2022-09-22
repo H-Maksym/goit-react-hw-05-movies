@@ -18,11 +18,11 @@ import { useLocation } from 'react-router-dom';
 export default function Movies() {
   const location = useLocation();
   const defaultSearchValue = location.search?.replace(/\?query=/, '');
-  const defaultPageValue = location.search?.replace(/\?query=[a-z]+&page=/, '');
+  // const defaultPageValue = location.search?.replace(/\?query=[a-z]+&page=/, '');
 
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchValue, setSearchValue] = useState(defaultSearchValue || '');
-  const [page, setPage] = useState(defaultPageValue || 1);
+  const [page, setPage] = useState(1);
   const [totalMovies, setTotalMovies] = useState(0);
   const [status, setStatus] = useState(API.IDLE);
 
@@ -77,7 +77,7 @@ export default function Movies() {
     if (searchValueInput.trim() !== searchValue || page !== 1) {
       setSearchValue(searchValueInput);
       setPage(1);
-      setSearchMovies([]);
+      // setSearchMovies([]);
       setTotalMovies(0);
     }
 
