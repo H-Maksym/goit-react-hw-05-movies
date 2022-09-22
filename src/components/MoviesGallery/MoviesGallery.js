@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MoviesGalleryItem from 'components/MoviesGallery/MoviesGalleryItem';
 import { StyledImageGallery } from './MoviesGallery.styled';
 
-export default function MoviesGallery({ movies }) {
+export default function MoviesGallery({ movies, searchValue /* , page  */ }) {
   const location = useLocation();
   return (
     <StyledImageGallery>
@@ -14,7 +14,11 @@ export default function MoviesGallery({ movies }) {
           idx
         ) => {
           return (
-            <Link key={idx} to={`/movies/${id}`} state={{ from: location }}>
+            <Link
+              key={idx}
+              to={`/movies/${id}`}
+              state={{ from: location, search: searchValue /* , page: page */ }}
+            >
               <MoviesGalleryItem
                 poster_path={poster_path}
                 title={title}
@@ -31,5 +35,6 @@ export default function MoviesGallery({ movies }) {
 }
 
 MoviesGallery.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object),
+  movies: PropTypes.arrayOf(PropTypes.object),
+  searchValue: PropTypes.string,
 };

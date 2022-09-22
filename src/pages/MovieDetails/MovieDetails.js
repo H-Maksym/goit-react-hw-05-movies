@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams, /* useLocation, */ Outlet } from 'react-router-dom';
-// import BackLink from 'components/BackLink';
+import { useParams, /* useLocation, */ Outlet } from 'react-router-dom';
 import MovieDetailsCard from 'components/MoviesDetailsCard';
 import API from 'services';
 
 // import PropTypes from 'prop-types';
 
-export default function MovieDetails(props) {
+import { toastConfigs } from 'config/notifyConfig';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+export default function MovieDetails() {
   const { movieId } = useParams();
-  // const location = useLocation();
   const [infoByMovie, setInfoByMovie] = useState({});
   const [status, setStatus] = useState(API.IDLE);
 
@@ -19,32 +21,24 @@ export default function MovieDetails(props) {
         const data = await API.getSearchMovieById(movieId);
         setInfoByMovie(data);
         setStatus(API.RESOLVED);
-        // toast.info('Everything is loaded');
+        // toast.info('Everything is loaded',toastConfigs);
       } catch (error) {
         setStatus(API.REJECTED);
-        // toast.error('oops :( Something wrong, try again');
+        toast.error('oops :( Something wrong, try again', toastConfigs);
       }
     }
     getMovie();
   }, [movieId]);
 
-  // const backLinkHref = location.state?.from ?? '/movies';
-  console.log(status);
   return (
     <>
-      <main>
-        <MovieDetailsCard infoByMovie={infoByMovie} />
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
-
-        <Outlet />
-      </main>
+      <ToastContainer />
+      {status === API.RESOLVED && (
+        <main>
+          <MovieDetailsCard infoByMovie={infoByMovie} />
+          <Outlet />
+        </main>
+      )}
     </>
   );
 }

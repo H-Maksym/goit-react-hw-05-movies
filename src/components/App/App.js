@@ -1,16 +1,18 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout';
+import Cast from 'pages/Cast';
+import Reviews from 'pages/Reviews';
 
 const Home = lazy(() => import('pages/Home' /*webpackChunkName:'Home'*/));
 const Movies = lazy(() => import('pages/Movies' /*webpackChunkName:'Movies'*/));
 const MovieDetails = lazy(() =>
   import('pages/MovieDetails' /*webpackChunkName:'MovieDetails'*/)
 );
-const Cast = lazy(() => import('pages/Cast' /*webpackChunkName:'Cast'*/));
-const Reviews = lazy(() =>
-  import('pages/Reviews' /*webpackChunkName:'Reviews'*/)
-);
+// const Cast = lazy(() => import('pages/Cast' /*webpackChunkName:'Cast'*/));
+// const Reviews = lazy(() =>
+//   import('pages/Reviews' /*webpackChunkName:'Reviews'*/)
+// );
 
 export default function App() {
   return (

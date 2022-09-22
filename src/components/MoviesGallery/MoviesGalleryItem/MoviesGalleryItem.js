@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   StyledMoviesGalleryItem,
   MoviesItem,
@@ -54,9 +54,9 @@ export default function MoviesGalleryItem({ poster_path, title }) {
   );
 }
 
-// MoviesGalleryItem.propTypes = {
-//   // id: PropTypes.string.isRequired,
-//   // name: PropTypes.string.isRequired,
-//   // number: PropTypes.string.isRequired,
-//   onOpenModal: PropTypes.func,
-// };
+MoviesGalleryItem.propTypes = {
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  // number: PropTypes.string.isRequired,
+  // onOpenModal: PropTypes.func,
+};
