@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import API from 'services';
 import MoviesGallery from 'components/MoviesGallery';
@@ -7,7 +7,6 @@ import Loader from 'components/Loader';
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
   const [status, setStatus] = useState(API.IDLE);
-  const isFirstRender = useRef(true);
 
   useEffect(() => {
     async function getPopularMovies() {
@@ -21,10 +20,6 @@ export default function Home() {
         setStatus(API.REJECTED);
         // toast.error('oops :( Something wrong, try again');
       }
-    }
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
     }
     getPopularMovies();
   }, []);

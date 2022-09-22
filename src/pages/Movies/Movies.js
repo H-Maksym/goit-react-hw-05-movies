@@ -58,7 +58,7 @@ export default function Movies(props) {
     }
 
     getSearchMovies();
-  }, [page, searchValue, totalMovies]);
+  }, [page, searchValue]);
 
   // useEffect(() => {
   //   if (page > 1) {
