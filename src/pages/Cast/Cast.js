@@ -1,11 +1,11 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import API from 'services';
 
 // import PropTypes from 'prop-types';
 
-import { toastConfigs } from 'config/notifyConfig';
-import { ToastContainer, toast } from 'react-toastify';
+// import { toastConfigs } from 'config/notifyConfig';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Cast() {
@@ -29,7 +29,7 @@ export default function Cast() {
     getCast();
   }, [movieId]);
 
-  console.log(cast);
+  console.log(status, cast, location);
   return (
     <>
       <div>NewPage</div>

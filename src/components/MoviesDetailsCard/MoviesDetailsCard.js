@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { StyledMoviesImg } from './MoviesDetailsCard.styled';
 import Box from 'components/Box';
 
 export default function MoviesDetailsCard({ infoByMovie }) {
   const {
     original_title = '',
-    vote_average = '',
-    overview = '',
-    genres = [],
+    // vote_average = '',
+    // overview = '',
+    // genres = [],
     poster_path = '',
   } = infoByMovie || {};
   return (

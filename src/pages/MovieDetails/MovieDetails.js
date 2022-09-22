@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
-import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
-import BackLink from 'components/BackLink';
+import { useEffect, useState } from 'react';
+import { Link, useParams, /* useLocation, */ Outlet } from 'react-router-dom';
+// import BackLink from 'components/BackLink';
 import MovieDetailsCard from 'components/MoviesDetailsCard';
 import API from 'services';
 
@@ -8,7 +8,7 @@ import API from 'services';
 
 export default function MovieDetails(props) {
   const { movieId } = useParams();
-  const location = useLocation();
+  // const location = useLocation();
   const [infoByMovie, setInfoByMovie] = useState({});
   const [status, setStatus] = useState(API.IDLE);
 
@@ -28,8 +28,8 @@ export default function MovieDetails(props) {
     getMovie();
   }, [movieId]);
 
-  const backLinkHref = location.state?.from ?? '/movies';
-
+  // const backLinkHref = location.state?.from ?? '/movies';
+  console.log(status);
   return (
     <>
       <main>
