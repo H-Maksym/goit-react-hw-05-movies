@@ -40,7 +40,7 @@ export default function Reviews() {
       {status === API.PENDING && <Loader />}
       {status === API.RESOLVED && (
         <StyledReviewsList>
-          {reviews > 0 ? (
+          {reviews.length > 0 ? (
             reviews.map(({ author, content }, idx) => {
               return (
                 <StyledReviewsListItem key={idx}>

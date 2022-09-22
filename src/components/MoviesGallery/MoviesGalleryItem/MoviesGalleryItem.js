@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import {
   StyledMoviesGalleryItem,
   MoviesItem,
+  StyledText,
 } from './MoviesGalleryItem.styled';
+// import Box from 'components/Box';
 // import Modal from 'components/Modal';
 // import InnerModal from 'components/InnerModal';
 // import useToggleModal from 'hooks/toggleModal/';
@@ -25,7 +27,7 @@ export default function MoviesGalleryItem({ poster_path, title }) {
           }`}
           loading="lazy"
         />
-        <span>{title}</span>
+        <StyledText>{title}</StyledText>
         {/* <br />
         <span>{vote_average}</span>
         <br />
@@ -34,7 +36,6 @@ export default function MoviesGalleryItem({ poster_path, title }) {
         <span>{overview}</span>
         <br /> */}
       </StyledMoviesGalleryItem>
-
       {/* {isOpen && (
         <Modal
           handleBackdropClick={handleBackdropClick}

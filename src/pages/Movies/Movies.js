@@ -77,7 +77,7 @@ export default function Movies() {
     if (searchValueInput.trim() !== searchValue || page !== 1) {
       setSearchValue(searchValueInput);
       setPage(1);
-      // setSearchMovies([]);
+      setSearchMovies([]);
       setTotalMovies(0);
     }
 
