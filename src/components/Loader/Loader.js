@@ -5,7 +5,7 @@ export default function Loader() {
     <Circles
       height="150"
       width="150"
-      color=" #3f51b5"
+      color=" orange"
       ariaLabel="circles-loading"
       wrapperStyle={{
         position: 'fixed',

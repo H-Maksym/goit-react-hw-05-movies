@@ -24,7 +24,7 @@ export default function MoviesDetailsCard({ infoByMovie }) {
   const location = useLocation();
   // `${location.state?.from.pathname}?query=${location.state?.from.search}`;
   let backLinkHref = '/';
-  if (location.state.search) {
+  if (location.state?.search) {
     backLinkHref =
       location.state?.from.pathname + '?query=' + location.state?.search /* +
         '&page=' +
