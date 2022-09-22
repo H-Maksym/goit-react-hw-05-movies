@@ -9,6 +9,7 @@ export const StyledForm = styled.form`
   border-radius: 3px;
   overflow: hidden;
   border-radius: 15px;
+  border-color: orange;
 `;
 
 export const StyledFilterInput = styled.input`

@@ -9,8 +9,8 @@ export async function getSearchMovieResult(query = '', page = 1) {
   return response.data;
 }
 
-export async function getMovieTrend(page = 1) {
-  const response = await axios.get(`/trending/movie/day?page=${page}`);
+export async function getMovieTrend() {
+  const response = await axios.get(`/trending/movie/day`);
   return response.data;
 }
 
@@ -19,7 +19,7 @@ export async function getSearchMovieById(id) {
   return response.data;
 }
 
-export async function getSearchCreditsMovieById(id) {
+export async function getSearchCastsMovieById(id) {
   const response = await axios.get(`movie/${id}/credits`);
   return response.data;
 }
@@ -38,8 +38,13 @@ const API = {
   getSearchMovieResult,
   getMovieTrend,
   getSearchMovieById,
-  getSearchCreditsMovieById,
+  getSearchCastsMovieById,
   getSearchReviewsMovieById,
+  IDLE: 'idle',
+  PENDING: 'pending',
+  RESOLVED: 'resolved',
+  LOADED: 'loaded',
+  REJECTED: 'rejected',
 };
 
 export default API;

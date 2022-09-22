@@ -2,8 +2,9 @@ import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
-import App from 'components/App';
+import App from 'components/App/App';
 // import { StyledApp } from 'components/App.styled';
 
 import { GlobalStyles } from 'utils/GlobalStyles';
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       {/* <StyledApp> */}
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
       {/* </StyledApp> */}
     </ThemeProvider>
   </React.StrictMode>

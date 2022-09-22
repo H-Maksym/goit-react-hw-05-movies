@@ -23,7 +23,7 @@ export default function SearchForm({ onClick }) {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Search images and photos"
+        placeholder="Search movies"
         // value={searchValue}
         // onClick={this.handleValueChange}
       />
