@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/Reviews.887c589e.chunk.js","mappings":"yMAGe,SAASA,EAAQC,GAC9B,OAAO,kBACR,C","sources":["pages/Reviews/Reviews.js"],"sourcesContent":["import React from 'react';\n// import PropTypes from 'prop-types';\n\nexport default function Reviews(props) {\n  return <div></div>;\n}\n\n// Reviews.propTypes = {};\n"],"names":["Reviews","props"],"sourceRoot":""}
