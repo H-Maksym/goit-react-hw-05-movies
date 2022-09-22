@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       {/* <StyledApp> */}
-      <BrowserRouter>
+      <BrowserRouter basename="goit-react-hw-05-movies">
         <App />
       </BrowserRouter>
       {/* </StyledApp> */}
